@@ -45,12 +45,24 @@ namespace Exercise_1_8
     class Flower
     {
         private:
-            std::string name;
-            int number_of_pedals;
-            float price;
+            std::string m_name;
+            int m_number_of_pedals;
+            float m_price;
 
         public:
-            Flower(std::string& nm, int pedals, float p) : name(nm), number_of_pedals(pedals), price(p){}
+            Flower(std::string& nm, int pedals, float p) : 
+                m_name(nm),
+                m_number_of_pedals(pedals),
+                m_price(p)
+                {}
+            std::string name() const {return m_name;}
+            int pedals() const {return m_number_of_pedals;}
+            float price() const {return m_price;}
+
+            void setname(const std::string& name) {m_name = name;}
+            void setpedals(int pedals) {m_number_of_pedals = pedals;}
+            void setprice(float price) {m_price = price;}
+
             
     };
 }
