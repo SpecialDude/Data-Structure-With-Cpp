@@ -1,6 +1,15 @@
-#!usr/bin/bash
-g++-11 -c ../src/Exercises/exercise1_8.cpp
-mv  exercise1_8.o ../Builds/obj/ 
-g++-11 -o ../Builds/example1_8 ../src/Exercises/exercise1_8.cpp ../src/Exercises/main-test-file.cpp
+#!/usr/bin/bash
 
-../Builds/example1_8
+
+# g++-11 -c ../src/Exercises/exercise1_8.cpp
+# mv  exercise1_8.o ../Builds/obj/ 
+# g++-11 -o ../Builds/example1_8 ../src/Exercises/exercise1_8.cpp ../src/Exercises/main-test-file.cpp
+
+# ../Builds/example1_8
+
+# Running the script from the root (project) directory
+g++-11 -c ./src/Exercises/exercise1_8.cpp
+mv  exercise1_8.o ./Builds/obj/ 
+g++-11 -o ./Builds/example1_8 ./src/Exercises/exercise1_8.cpp ./src/Exercises/main-test-file.cpp
+
+./Builds/example1_8
