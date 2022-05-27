@@ -115,6 +115,72 @@ namespace Exercise_1_8
             float getIntFloatSum() {return m_var1 + m_var3;}
             float getAllSum() {return m_var2 + m_var2 + m_var3;}
     };
+
+    /*
+    R-1.18
+    Write a short C++ function, isMultiple, that takes two long values, n and
+    m, and returns true if and only if n is a multiple of m, that is, n = m · i for
+    some integer i.
+    Implemented!! (Check exercise R-1.8)
+    */
+
+    /*
+    R-1.19
+    Write a short C++ function, isTwoPower, that takes an int i and returns true
+    if and only if i is a power of 2. Do not use multiplication or division however.
+    */
+    bool isTwoPower(int i);
+
+    /*
+    R-1.20
+    Write a short C++ function that takes an integer n and returns the sum of all the
+    integers smaller than n
+    Implemented!! (Check exercise R-1.7)
+    */
+
+    /*
+    R-1.21
+    Write a short C++ function that takes an integer n and returns the sum of all the
+    odd integers smaller than n
+    Implemented!! (Check exercise R-1.7)
+    */
+    int sum_odd_up_to_n(int n);
+
+    /*
+    R-1.22
+    Write a short C++ function that takes a positive double value x and returns the number
+    of times we can divide x by 2 before we get a number less than 2
+    */
+    uint divide_by_two(double x);
+
+    /*
+    Creativity C-1.1
+    Reverse Array
+    */
+    void reverse_array(int* arry, int size);
+    
+    /*
+    C-1.2
+    Write a short C++ function that takes an array of int values and determines
+    if there is a pair of numbers in the array whose product is even.
+    */
+    bool there_is_even_product(int* arr, int size);
+
+    /*
+    C-1.3
+    Write a C++ function that takes an STL vector of int values and determines
+    if all the numbers are different from each other (that is, they are distinct).
+    */
+    bool they_are_distinct(std::vector<int> arr);
+
+    /*
+    C-1.4
+    Write a C++ function that takes an STL vector of int values and prints all
+    the odd values in the vector.
+    */
+    void print_odd_only(std::vector<int> arr);
 }
+
+int testfunc();
 
 #endif
