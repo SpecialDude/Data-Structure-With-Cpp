@@ -116,6 +116,8 @@ namespace Exercise_1_8
             float getAllSum() {return m_var2 + m_var2 + m_var3;}
     };
 
+
+
     /*
     R-1.18
     Write a short C++ function, isMultiple, that takes two long values, n and
@@ -179,8 +181,93 @@ namespace Exercise_1_8
     the odd values in the vector.
     */
     void print_odd_only(std::vector<int> arr);
-}
 
-int testfunc();
+    /*
+    C-1.5
+    Write a C++ function that takes an array containing the set of all integers
+    in the range 1 to 52 and shuffles it into random order. Use the built-in
+    function rand, which returns a pseudo-random integer each time it is called.
+    Your function should output each possible order with equal probability.
+    */
+    void shuffle_array(int* arr);
+
+    /*
+    C-1.6
+    Write a short C++ program that outputs all possible strings formed by using
+    each of the characters ’a’, ’b’, ’c’, ’d’, ’e’, and ’f’ exactly once.
+    */
+    void permuteSomeCharSet();
+
+    /*
+    C-1.7
+    Write a short C++ program that takes all the lines input to standard input
+    and writes them to standard output in reverse order. That is, each line is
+    output in the correct order, but the ordering of the lines is reversed.
+    */
+    void reverse_line_inputs();
+
+   /*
+   C-1.8
+   Write a short C++ program that takes two arguments of type STL vector<double>,
+   a and b, and returns the element-by-element product of a and b. That is, it
+   returns a vector c of the same length such that c[i] = a[i] · b[i].
+   */
+    std::vector<double> element_by_element_product(const std::vector<double>& a, const std::vector<double>& b);
+
+    /*
+    C-1.9
+    Write a C++ class Vector2, that stores the (x, y) coordinates of a two-dimensional
+    vector, where x and y are of type double. Show how to override various C++
+    operators in order to implement the addition of twovectors (producing a vector result),
+    the multiplication of a scalar times a vector (producing a vector result), and the dot
+    product of two vectors (producing a double result).
+    */
+    class Vector2
+    {
+        private:
+            double m_x;
+            double m_y;
+        
+        public:
+            Vector2() : m_x(0), m_y(0) {}
+            Vector2(double x, double y) : m_x(x), m_y(y) {}
+            // Vector2(const Vector2& other) : m_x(other.m_x), m_y(other.m_y) {std::cout << "Constructor: Copied!!!\n";}
+            // ~Vector2() {std::cout << "Vector Destroyed\n";}
+            // Vector2& operator=(const Vector2& other) {m_x = other.m_x; m_y = other.m_y; std::cout << "Operator Assignment (copying)\n"; return *this;}
+            // void operator=(const Vector2& other) {m_x = other.m_x; m_y = other.m_y; std::cout << "Operator Assignment (copying)\n";}
+            friend std::ostream& operator<<(std::ostream& out, const Vector2& vector2);
+            friend Vector2 operator+(const Vector2& a, const Vector2& b);
+            friend Vector2 operator-(const Vector2& a, const Vector2& b);
+            friend double operator*(const Vector2& a, const Vector2& b);
+            friend Vector2 operator*(const Vector2& vector2, double scalar);
+    };
+    std::ostream& operator<<(std::ostream& out, const Vector2& vector2);
+    Vector2 operator+(const Vector2& a, const Vector2& b);
+    Vector2 operator-(const Vector2& a, const Vector2& b);
+    double operator*(const Vector2& a, const Vector2& b);
+    Vector2 operator*(const Vector2& vector2, double scalar);
+    Vector2 operator*(double scalar, const Vector2& vector2);
+
+    /*
+    Write an efficient C++ function that takes any integer value i and returns 2^i, as a
+    long value. Your function should not multiply 2 by itself i times; there are much
+    faster ways of computing 2i .
+    */
+    long two_to_power_of(unsigned int i);
+    double two_to_power_of(signed int i);
+    
+    /*
+    C-1.11
+    The greatest common divisor, or GCD, of two positive integers n and m is the largest
+    number j, such that n and m are both multiples of j. Euclid proposed a simple algorithm
+    for computing GCD(n, m), where n > m, which is based on a concept known as the Chinese
+    Remainder Theorem. The main idea of the algorithm is to repeatedly perform modulo computations
+    of consecutive pairs of the sequence that starts (n, m, . . .), until reaching zero. The last
+    nonzero number in this sequence is the GCD of n and m. For example, for n = 80, 844 and
+    m = 25, 320, the sequence is as follows:
+    */
+    unsigned int greatest_common_divisor(unsigned int n, unsigned int m);
+
+}
 
 #endif

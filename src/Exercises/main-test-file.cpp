@@ -3,6 +3,9 @@
 #include "exercise1_8.h"
 
 #define ENDL "\n"
+#define EMPTY ""
+#define ENDLT "\n\t"
+#define ENDT "\t"
 
 std::string operator*(const std::string& st, int times)
 {
@@ -207,7 +210,7 @@ int main()
     printFooter();
 
     // R-1.22 Test
-    printHeader("Exercice R-1.22 - Number of times a number can be divided by 2");
+    printHeader("Exercise R-1.22 - Number of times a number can be divided by 2");
     std::cout << "Tests:" << ENDL;
     std::cout << "case 2.5: " << Exercise_1_8::divide_by_two(2.5) << ENDL;
     std::cout << "case 1.999: " << Exercise_1_8::divide_by_two(1.999) << ENDL;
@@ -218,7 +221,7 @@ int main()
     printFooter();
     
     // C-1.1 Test
-    printHeader("Exercice C-1.1 - Reverse Array");
+    printHeader("Exercise C-1.1 - Reverse Array");
     std::cout << "Tests:" << ENDL;
     std::cout << "case ";
     int arr[5] = {1, 2, 3, 4, 5};
@@ -236,9 +239,8 @@ int main()
 
     printFooter();
     
-
     // C-1.2 Test
-    printHeader("Exercice C-1.2 - Pair of numbers with even product");
+    printHeader("Exercise C-1.2 - Pair of numbers with even product");
     std::cout << "Tests:" << ENDL;
     std::cout << "case ";
     int testarr[5] = {1, 2, 3, 4, 5};
@@ -252,8 +254,8 @@ int main()
 
     printFooter();
 
-    // C-1.2 Test
-    printHeader("Exercice C-1.2 - Distinct Vector");
+    // C-1.3 Test
+    printHeader("Exercise C-1.3 - Distinct Vector");
     std::cout << "Tests:" << ENDL;
     std::cout << "case ";
     std::vector<int> vect1;
@@ -271,8 +273,8 @@ int main()
 
     printFooter();
 
-    // C-1.3 Test
-    printHeader("Exercice C-1.2 - Print odd Elements only");
+    // C-1.4 Test
+    printHeader("Exercise C-1.4 - Print odd Elements only");
     std::cout << "Tests:" << ENDL;
     std::cout << "case ";
     printArray<std::vector<int>>(vect2, vect2.size(), "");
@@ -286,6 +288,73 @@ int main()
     Exercise_1_8::print_odd_only(vect1);
     std::cout << ENDL;
 
+    printFooter();
+
+    // C-1.8
+    printHeader("Exercise C-1.8 - Element by element product");
+    std::cout << "Tests:" << ENDL;
+    std::cout << "case\n\ta = ";
+    std::vector<double> vectorA = {3.4, 49.04, 322.20, 39.102, 202.30};
+    printArray(vectorA, vectorA.size(), ENDLT);
+    std::cout << "b = ";
+    std::vector<double> vectorB = {10.5, 7.98, 66.5, 90.2, 1.15};
+    printArray(vectorB, vectorB.size(), ENDLT);
+    std::cout << ": c = ";
+    printArray(Exercise_1_8::element_by_element_product(vectorA, vectorB), vectorA.size(), ENDL);
+    printFooter();
+
+    // C-1.9
+    printHeader("Exercise C-1.9 - Vector2 Operations");
+    std::cout << "Test:" << ENDL;    
+    std::cout << "\tCreating Vector2 Instance:\n";
+    Exercise_1_8::Vector2 cordinateA(10, 47);
+    Exercise_1_8::Vector2 cordinateB(16, -20);
+    std::cout << ENDT << ENDT << "A = " << cordinateA << ", B = " << cordinateB << ENDL;
+    std::cout << "\tPerforming operations:" << ENDL;
+    std::cout << ENDT << ENDT << "A + B: " << cordinateA + cordinateB << ENDL;  // (rValues only, Destructor is called)
+    std::cout << ENDT << ENDT << "A - B: " << cordinateA - cordinateB << ENDL;
+    std::cout << ENDT << ENDT << "A * B: " << cordinateA * cordinateB << ENDL;
+    std::cout << ENDT << ENDT << "A * 5: " << cordinateA * 5 << ENDL;
+    std::cout << ENDT << ENDT << "10 * B: " << 10 * cordinateB << ENDL;
+    printFooter();
+    /* Exercise_1_8::Vector2 testv = 17 * cordinateB;  // (Rvalue: Copy and Assignment operator Constructors and Destructor NOT called)
+    Exercise_1_8::Vector2 testv2;                   // (Calls the default constructor)
+
+    std::cout << testv2 << ENDL;
+    testv2 = 10 * cordinateB;                       // (Calls the Assignment operator, and Destructor for the Rvalue)
+    std::cout << testv << ENDL;
+    std::cout << testv2 << ENDL;
+    printFooter();
+
+    Exercise_1_8::Vector2 tobC = testv2;            // (Calls the Copy Constructor)
+    Exercise_1_8::Vector2 testV3(testv);            // (Calls the copy Constructor)
+    Exercise_1_8::Vector2 newTestV = testv2 = testv; // (Calls the Assignment operator, then the copy Constructor)
+    printFooter(); */
+
+    // C-1.10 Test
+    printHeader("Exercise C-1.10 - Two to the power of i");
+    std::cout << "Tests:" << ENDL;
+    std::cout << "case 5: " << Exercise_1_8::two_to_power_of(5u) << ENDL;
+    std::cout << "case 4: " << Exercise_1_8::two_to_power_of(4u) << ENDL;
+    std::cout << "case 3: " << Exercise_1_8::two_to_power_of(3u) << ENDL;
+    std::cout << "case 2: " << Exercise_1_8::two_to_power_of(2u) << ENDL;
+    std::cout << "case 1: " << Exercise_1_8::two_to_power_of(1u) << ENDL;
+    std::cout << "case 0: " << Exercise_1_8::two_to_power_of(0u) << ENDL;
+    std::cout << "case -1: " << Exercise_1_8::two_to_power_of(-1) << ENDL;
+    std::cout << "case -2: " << Exercise_1_8::two_to_power_of(-2) << ENDL;
+    std::cout << "case -3: " << Exercise_1_8::two_to_power_of(-3) << ENDL;
+    std::cout << "case -4: " << Exercise_1_8::two_to_power_of(-4) << ENDL;
+    std::cout << "case -5: " << Exercise_1_8::two_to_power_of(-5) << ENDL;
+    printFooter();
+
+    // C-1.11 Test
+    printHeader("Exercise C-1.11 - greatest_common_divisor(n, m)");
+    std::cout << "Tests:" << ENDL;
+    std::cout << "case 10, 5: " << Exercise_1_8::greatest_common_divisor(10, 5) << ENDL;
+    std::cout << "case 13, 820: " << Exercise_1_8::greatest_common_divisor(13, 820) << ENDL;
+    std::cout << "case 1024, 1000: " << Exercise_1_8::greatest_common_divisor(1024, 1000) << ENDL;
+    std::cout << "case 773, 98: " << Exercise_1_8::greatest_common_divisor(773, 98) << ENDL;
+    std::cout << "case 80844, 25320: " << Exercise_1_8::greatest_common_divisor(80844, 25320) << ENDL;
     printFooter();
 
     return EXIT_SUCCESS;

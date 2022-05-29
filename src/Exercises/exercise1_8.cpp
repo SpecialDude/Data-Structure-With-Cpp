@@ -60,6 +60,7 @@ std::ostream& Exercise_1_8::operator<<(std::ostream& out, const Exercise_1_8::Cr
 bool Exercise_1_8::isTwoPower(int i)
 {
     return !(i == 0) && ((i & (i - 1)) == 0);
+
 }
 
 // R-1.21
@@ -123,7 +124,7 @@ bool Exercise_1_8::they_are_distinct(std::vector<int> arr)
     return 1;
 }
 
-// C-1.3
+// C-1.4
 void Exercise_1_8::print_odd_only(std::vector<int> arr)
 {
     std::cout << "[ ";
@@ -135,7 +136,87 @@ void Exercise_1_8::print_odd_only(std::vector<int> arr)
     std::cout << "]";
 }
 
-int testfunc()
+// C-1.5
+void Exercise_1_8::shuffle_array(int* arr)
 {
-    return 100;
+    ;
+}
+
+// C-1.6
+void Exercise_1_8::permuteSomeCharSet()
+{
+    char arr[] = {'a', 'b', 'c', 'd', 'e', 'f'};
+}
+
+// C-1.7
+void Exercise_1_8::reverse_line_inputs()
+{
+    ;
+}
+
+// C-1.8
+std::vector<double> Exercise_1_8::element_by_element_product(const std::vector<double>& a, const std::vector<double>& b)
+{
+    std::vector<double> c;
+    // std::size_t(*size)();
+    // auto size = a.size;
+    c.reserve(a.size());
+
+    for (int i = 0; i < a.size(); i++)
+    {
+        c.push_back(a[i] * b[i]);
+    }
+    return c;
+}
+
+// C-1.9
+std::ostream& Exercise_1_8::operator<<(std::ostream& out, const Exercise_1_8::Vector2& vector2)
+{
+    out << "Vector2(" << vector2.m_x << ", " << vector2.m_y << ")";
+    return out;
+}
+
+Exercise_1_8::Vector2 Exercise_1_8::operator+(const Exercise_1_8::Vector2& a, const Exercise_1_8::Vector2& b)
+{
+    return Vector2(a.m_x + b.m_x, a.m_y + b.m_y);
+}
+
+Exercise_1_8::Vector2 Exercise_1_8::operator-(const Exercise_1_8::Vector2& a, const Exercise_1_8::Vector2& b)
+{
+    return Vector2(a.m_x - b.m_x, a.m_y - b.m_y);
+}
+
+double Exercise_1_8::operator*(const Exercise_1_8::Vector2& a, const Exercise_1_8::Vector2& b)
+{
+    return (a.m_x * b.m_x) + (a.m_y * b.m_y);
+}
+
+Exercise_1_8::Vector2 Exercise_1_8::operator*(const Exercise_1_8::Vector2& vector2, double scalar)
+{
+    return Vector2(vector2.m_x * scalar, vector2.m_y * scalar);
+}
+
+Exercise_1_8::Vector2 Exercise_1_8::operator*(double scalar, const Exercise_1_8::Vector2& vector2)
+{
+    return vector2 * scalar;
+}
+
+// C-1.10
+long Exercise_1_8::two_to_power_of(unsigned int i)
+{
+    return (i == 0) ? 1 : 2 << (i - 1);
+}
+double Exercise_1_8::two_to_power_of(signed int i)
+{
+    return 1.0 / (2 << (-i - 1));
+}
+
+// C-1.11
+unsigned int Exercise_1_8::greatest_common_divisor(unsigned int n, unsigned int m)
+{
+    // int quotient = n / m;
+    int remainder = n % m;
+
+    if (remainder == 0) return m;
+    return greatest_common_divisor(m, remainder);
 }
