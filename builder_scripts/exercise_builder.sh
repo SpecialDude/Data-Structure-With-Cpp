@@ -1,6 +1,5 @@
 #!/usr/bin/bash
 
-
 if [ "$1" = "" ];
 then
     # Running the script from the root (project) directory

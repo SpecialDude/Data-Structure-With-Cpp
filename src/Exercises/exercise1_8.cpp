@@ -204,11 +204,11 @@ Exercise_1_8::Vector2 Exercise_1_8::operator*(double scalar, const Exercise_1_8:
 // C-1.10
 long Exercise_1_8::two_to_power_of(unsigned int i)
 {
-    return (i == 0) ? 1 : 2 << (i - 1);
+    return (i == 0) ? 1 : (long)2 << (i - 1);
 }
 double Exercise_1_8::two_to_power_of(signed int i)
 {
-    return 1.0 / (2 << (-i - 1));
+    return 1.0 / ((long)2 << (-i - 1));
 }
 
 // C-1.11

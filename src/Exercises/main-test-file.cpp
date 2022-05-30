@@ -334,6 +334,7 @@ int main()
     // C-1.10 Test
     printHeader("Exercise C-1.10 - Two to the power of i");
     std::cout << "Tests:" << ENDL;
+    std::cout << "case 32: " << Exercise_1_8::two_to_power_of(32u) << ENDL;
     std::cout << "case 5: " << Exercise_1_8::two_to_power_of(5u) << ENDL;
     std::cout << "case 4: " << Exercise_1_8::two_to_power_of(4u) << ENDL;
     std::cout << "case 3: " << Exercise_1_8::two_to_power_of(3u) << ENDL;
